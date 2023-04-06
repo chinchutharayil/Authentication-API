@@ -1,0 +1,29 @@
+[2022-10-27 16:30:43.323 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-10-27 16:30:51.070 +03:00  INF]  Starting web host (Identity.API)...
+[2022-10-27 16:30:51.434 +03:00  INF]  Initializing UI Database
+[2022-10-27 16:30:52.478 +03:00  INF]  Saving healthchecks configuration to database
+[2022-10-27 16:30:53.065 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-10-27 16:30:54.746 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-10-27 16:30:54.749 +03:00  DBG]  Creating a new HealthReport history.
+[2022-10-27 16:30:54.818 +03:00  DBG]  HealthReportCollector has completed.
+[2022-10-27 16:30:54.829 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-10-27 16:31:04.834 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-10-27 16:31:04.886 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-10-27 16:31:04.887 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-10-27 16:31:04.892 +03:00  DBG]  HealthReportCollector has completed.
+[2022-10-27 16:31:04.892 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-10-27 16:31:14.907 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-10-27 16:31:14.957 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-10-27 16:31:14.958 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-10-27 16:31:14.959 +03:00  DBG]  HealthReportCollector has completed.
+[2022-10-27 16:31:14.959 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-10-27 16:31:24.969 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-10-27 16:31:24.975 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-10-27 16:31:24.976 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-10-27 16:31:24.977 +03:00  DBG]  HealthReportCollector has completed.
+[2022-10-27 16:31:24.977 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-10-27 16:31:34.978 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-10-27 16:31:34.987 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-10-27 16:31:34.988 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-10-27 16:31:34.988 +03:00  DBG]  HealthReportCollector has completed.
+[2022-10-27 16:31:34.989 +03:00  DBG]  HealthCheck collector HostedService executed successfully.

@@ -1,0 +1,206 @@
+<div>
+  <div class="col-13">
+    <form>
+      <div class="card card-info">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">From:</label>
+                <div class="col-sm-4">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Choose a month</mat-label>
+                    <input matInput [(ngModel)]="FromMonthAndYear" name="From" [matDatepicker]="picker" monthYearLabel
+                      (dateChange)="FromEmitDateChange($event)" />
+                    <mat-hint>MM-YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker [startView]="'year'" (monthSelected)="FromMonthChanged($event, picker)">
+                    </mat-datepicker>
+                  </mat-form-field>
+
+                  <!-- <select class="uni-input" *ngIf="display" name="selectedYear" class="form-control">
+                                        <option disabled>-Select-</option>
+                                        <option value="{{item}}" *ngFor="let item of range">{{item}}</option>
+                                    </select> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">To:</label>
+                <div class="col-sm-4">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Choose a month</mat-label>
+                    <input matInput [(ngModel)]="ToMonthAndYear" name="To" [matDatepicker]="picker1" monthYearLabel
+                      (dateChange)="ToEmitDateChange($event)" />
+                    <mat-hint>MM-YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker1">
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1 [startView]="'year'" (monthSelected)="ToMonthChanged($event, picker1)">
+                    </mat-datepicker>
+                  </mat-form-field>
+
+                  <!-- <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                  </mat-form-field> -->
+                  <!-- <select name="" #contacts formControlName="contactType" class="form-control">
+                                        <option value="">-----Select-----</option>
+                                        <option *ngFor="let contacts of EmpContactType"
+                                            [selected]="contacts.id === EmpContactInfo.id" [value]="contacts.id">
+                                            {{contacts.name}}</option>
+                                    </select> -->
+                </div>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-info" (click)="search()">Search</button>
+              &nbsp;
+              <button type="button" class="btn btn-info">Print To PDF</button>
+              &nbsp;
+              <button type="button" class="btn btn-info" (click)="exporter.exportTable('xlsx',{fileName:'Employee Salary History'})">Export To Excel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-13">
+    <div class="card">
+      <div class="card-header">
+        <h5> Salary details From  {{FromMonthAndYear | date:'MMMM YYYY'}}  To {{ToMonthAndYear | date:'MMMM YYYY'}} </h5>
+      </div>
+      <div class="card-body table-responsive p-0">
+        <div class="content" role="main">
+          <div class="example-container mat-elevation-z8">
+
+            <table mat-table matTableExporter [dataSource]="dataSource" class="table-bordened table-striped table-head-fixed" #exporter="matTableExporter"
+              style="width:100%; height: max-content;">
+
+              <ng-container matColumnDef="payDate">
+                <th mat-header-cell *matHeaderCellDef>Months</th>
+                <td mat-cell *matCellDef="let salInfo"  class="text-center"> {{salInfo.payDate}} </td>
+                <td mat-footer-cell *matFooterCellDef> Total </td>
+              </ng-container>
+
+              <ng-container matColumnDef="days">
+                <th mat-header-cell *matHeaderCellDef>Days</th>
+                <td mat-cell *matCellDef="let salInfo"  class="text-center"> {{salInfo.days}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="entitledBasicSalary">
+                <th mat-header-cell *matHeaderCellDef>Basic</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.entitledBasicSalary}}</td>
+                <!-- <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td> -->
+              </ng-container>
+
+              <ng-container matColumnDef="basicSalary">
+                <th mat-header-cell *matHeaderCellDef>Basic Payable</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.basicSalary}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="otAmount">
+                <th mat-header-cell *matHeaderCellDef>OT Pay</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.otAmount}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="hra">
+                <th mat-header-cell *matHeaderCellDef>HRA</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.hra}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="transport">
+                <th mat-header-cell *matHeaderCellDef>Transport</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right"> {{salInfo.transport}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="fuel">
+                <th mat-header-cell *matHeaderCellDef>Fuel</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.fuel}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="telephone">
+                <th mat-header-cell *matHeaderCellDef>Telephone</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.telephone}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="branch">
+                <th mat-header-cell *matHeaderCellDef>Branch</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.branch}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="ticket">
+                <th mat-header-cell *matHeaderCellDef>Ticket</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.ticket}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="seniority">
+                <th mat-header-cell *matHeaderCellDef>SRN</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.seniority}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="skill">
+                <th mat-header-cell *matHeaderCellDef>Skills</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.skill}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="merit">
+                <th mat-header-cell *matHeaderCellDef>Merits</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.merit}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="other">
+                <th mat-header-cell *matHeaderCellDef>Others</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.other}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="totalAllowance">
+                <th mat-header-cell *matHeaderCellDef>Total Allowance</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.totalAllowance}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="cashAdvance">
+                <th mat-header-cell *matHeaderCellDef>Cash Advance</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.cashAdvance}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="lateAmount">
+                <th mat-header-cell *matHeaderCellDef>Late Amount</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.lateAmount}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="vehicleLoan">
+                <th mat-header-cell *matHeaderCellDef>Vehicle Loan</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.vehicleLoan}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="otherDeduction">
+                <th mat-header-cell *matHeaderCellDef>Other Deduction</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.otherDeduction}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="totalDeduction">
+                <th mat-header-cell *matHeaderCellDef>Total Deduction</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.totalDeduction}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="netPayable">
+                <th mat-header-cell *matHeaderCellDef>Net Payable</th>
+                <td mat-cell *matCellDef="let salInfo" class="text-right">{{salInfo.netPayable}}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

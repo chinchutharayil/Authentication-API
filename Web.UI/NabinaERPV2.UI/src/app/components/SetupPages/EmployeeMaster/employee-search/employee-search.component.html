@@ -1,0 +1,185 @@
+<div class="col-sm-12">
+  <div class="card card-info">
+    <div class="card-header">
+      <h2 class="card-title">Employee</h2>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- text input -->
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Employee Name</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" [(ngModel)]="empName" name="empName" placeholder="Enter ...">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <!-- text input -->
+            <div class="form-group row">
+              <label for="department" class="col-sm-3 col-form-label">Department</label>
+              <div class="col-sm-7">
+                <select name="" #dept (change)="onSelectedDepartment()" id="syncPolicy" class="form-control">
+                  <option default value="0">-----Select-----</option>
+                  <option *ngFor="let dep of DepartmentList" [value]="dep.id">{{dep.name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Nationality</label>
+              <div class="col-sm-7">
+                <select name="" #natlist (change)="onSelectedNational()" class="form-control">
+                  <option default value="0">-----Select-----</option>
+                  <option *ngFor="let Natlist of NationalityList" [value]="Natlist.id">{{Natlist.nationality1}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Employee No</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" id="empNo" [(ngModel)]="empNo" name="empNo"
+                  placeholder="Enter ...">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Designation</label>
+              <div class="col-sm-7">
+                <select name="" #desg (change)="onSelectedDesignation()" class="form-control">
+                  <option default value="0">-----Select-----</option>
+                  <option *ngFor="let Desig of DesignationList" [value]="Desig.id">{{Desig.name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Sponsor</label>
+              <div class="col-sm-7">
+                <select name="" #sponsor (change)="onSelectedSponsor()" class="form-control">
+                  <option value="0">-----Select-----</option>
+                  <option *ngFor="let sponsor of SponsorList" [value]="sponsor.id">{{sponsor.sponsorName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-form-label">Status</label>
+              <div class="col-sm-7">
+                <select name="" #status (change)="onChangeStatus()" class="form-control">
+                  <option value="">-----Select-----</option>
+                  <option value="0">Active</option>
+                  <option value="1">On Leave</option>
+                  <option value="2">Resign</option>
+                  <option value="3">Terminated</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-info" (click)="searchTitle()">Search</button> &nbsp;&nbsp;
+          <button type="submit" class="btn btn-info"
+            (click)="exporter.exportTable('xlsx',{fileName:'Employee Search'})">Export</button> &nbsp;&nbsp;
+          <!-- <button type="submit" class="btn btn-info" (click)="createPdf()">Print To PDF</button>  -->
+        </div>
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+</div>
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <button [routerLink]="['/EmployeeMaster']" id="addbtn" type="button"
+        class="btn btn-success btn rounded float-right"><i class="fas fa-plus"></i> Add New</button>
+    </div>
+    <div class="card-body table-responsive p-0" style="height: 550px;">
+      <div class="content" role="main">
+        <div class="example-container mat-elevation-z8">
+
+          <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"
+            class="table-bordened table-striped table-head-fixed text-nowrap " style="width:100%;" matSort>
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let employee"><a [routerLink]="['/EmployeeMaster',employee.id]" id="editbtn"><i
+                    class="fas fa-edit"></i></a></td>
+            </ng-container>
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>Sl No.</th>
+              <td mat-cell *matCellDef="let employee; let i=index"> {{(paginator.pageIndex * paginator.pageSize) + (i
+                + 1)}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="empNo">
+              <th mat-header-cell *matHeaderCellDef>Emp No.</th>
+              <td mat-cell *matCellDef="let employee"> {{employee.empNo}} </td>
+
+            </ng-container>
+
+            <ng-container matColumnDef="empName">
+              <th mat-header-cell *matHeaderCellDef>Employee Name</th>
+              <td mat-cell *matCellDef="let employee">{{employee.empName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="managerName">
+              <th mat-header-cell *matHeaderCellDef>Manager Name </th>
+              <td mat-cell *matCellDef="let employee">{{employee.managerName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="empDepartment">
+              <th mat-header-cell *matHeaderCellDef>Department </th>
+              <td mat-cell *matCellDef="let employee">{{employee.empDepartment}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="empDesignation">
+              <th mat-header-cell *matHeaderCellDef>Designation </th>
+              <td mat-cell *matCellDef="let employee">{{employee.empDesignation}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="empNationality">
+              <th mat-header-cell *matHeaderCellDef>Nationality</th>
+              <td mat-cell *matCellDef="let employee">{{employee.empNationality}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="rpNo">
+              <th mat-header-cell *matHeaderCellDef>RP No.</th>
+              <td mat-cell *matCellDef="let employee">{{employee.rpNo}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="empSponsorName">
+              <th mat-header-cell *matHeaderCellDef>Sponsor Name</th>
+              <td mat-cell *matCellDef="let employee">{{employee.empSponsorName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let employee">{{employee.status}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator #paginator [pageSize]="12" [pageSizeOptions]="[5, 12, 25]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

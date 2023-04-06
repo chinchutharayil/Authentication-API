@@ -1,0 +1,76 @@
+<div class="col-13">
+  <div class="card card-info">
+    <div class="card-header">
+      <h2 class="card-title">Add Designation</h2>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form [formGroup]="desgForm">
+        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+          Designation added Successfully
+          <button (click)="closeAlert()" type="button" style="float:right ;" data-dismiss="alert" class="close"
+            aria-label="Close">X</button>
+        </div>
+        <div *ngIf="erroralert" class="alert alert-danger alert-dismissible fade show" role="alert">
+          Designation already exist
+          <button (click)="closeErrorAlert()" type="button" style="float:right ;" data-dismiss="alert" class="close"
+            aria-label="Close">X</button>
+        </div>
+        <div *ngIf="updatealert" class="alert alert-success alert-dismissible fade show" role="alert">
+          Designation Updated Successfully
+          <button (click)="closeUpdateAlert()" type="button" style="float:right ;" data-dismiss="alert" class="close"
+            aria-label="Close">X</button>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- text input -->
+            <div class="form-group">
+              <label for="name">Designation</label>
+              <input formControlName="name" [(ngModel)]="designation.name" class="form-control"
+                [ngClass]="{'is-invalid' : submitted && f['name'].errors}" placeholder="Enter ...">
+              <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">Please enter designation</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <!-- text input -->
+            <div class="form-group">
+              <label for="sortOrder">Sort Order</label>
+              <input formControlName="sortOrder" [(ngModel)]="designation.sortOrder" class="form-control"
+                [ngClass]="{'is-invalid' : submitted && f['sortOrder'].errors}" placeholder="Enter ...">
+              <div *ngIf="submitted && f['sortOrder'].errors" class="invalid-feedback">
+                <div *ngIf="f['sortOrder'].errors['required']">Please enter sort order</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <!-- text input -->
+            <div class="form-group">
+              <label for="maxstaff">Maximum Staff</label>
+              <input formControlName="maxStaff" [(ngModel)]="designation.maxStaff" class="form-control"
+                [ngClass]="{'is-invalid' : submitted && f['maxStaff'].errors}" placeholder="Enter ...">
+              <div *ngIf="submitted && f['maxStaff'].errors" class="invalid-feedback">
+                <div *ngIf="f['maxStaff'].errors['required']">Please enter maximum staff</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!-- checkbox -->
+          <div class="form-group">
+            <input class="form-check-input" type="checkbox" formControlName="isActive"
+              [(ngModel)]="designation.isActive">
+            <label for="IsActive">IsActive</label>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-info" (click)="saveDesignation()">Save</button>
+          &nbsp;
+          <button [routerLink]="['/designationsearch']" type="button" class="btn btn-info">Back</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+</div>

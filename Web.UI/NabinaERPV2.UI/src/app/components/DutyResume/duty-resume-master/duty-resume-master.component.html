@@ -1,0 +1,217 @@
+<app-employee-header></app-employee-header>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-primary card-tabs">
+      <div class="card-header p-0 pt-1">
+        <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="custom-tabs-master-tab" data-toggle="pill" href="#custom-tabs-master"
+              role="tab" aria-controls="custom-tabs-master-control" aria-selected="false">Duty Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-salaryInfo-tab" data-toggle="pill" href="#custom-tabs-salaryInfo"
+              role="tab" aria-controls="custom-tabs-salaryInfo-control" aria-selected="false">Head Of Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-entitle-tab" data-toggle="pill" href="#custom-tabs-entitle" role="tab"
+              aria-controls="custom-tabs-entitle-control" aria-selected="false">Personnel Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-offDocs-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-offDocs-control" role="tab" href="#custom-tabs-offDocs">Accounts Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-contactInfo-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-contactInfo-control" role="tab" href="#custom-tabs-contactInfo">Management
+              Approval</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content" id="custom-tabs-tabContent">
+          <div class="tab-pane fade show active" id="custom-tabs-master" role="tabpanel"
+            aria-labelledby="custom-tabs-master-control">
+            <div class="overlay-wrapper">
+              <!-- <form [formGroup]="empmasterForm" (ngSubmit)="SaveEmpInfoDetails()"></form> -->
+              <form [formGroup]="DutyResumeForm" (ngSubmit)="SaveDutyResume()">
+                <div class="modal fade" id="modal-success">
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-success">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Success Modal</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Successfully Saved &hellip;</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="title"></div>
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="code" class="col-sm-5 col-form-label">Employee Code:</label>
+                            <div class="col-sm-5">
+                              <h3>{{dutyResume.empcode| number}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="firstname" class="col-sm-5 col-form-label">Employee Name: <sup
+                                style="color:crimson">*</sup> </label>
+                                <div class="col-sm-5">
+                                  <h3>{{dutyResume.empname| number}}</h3>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="mname" class="col-sm-5 col-form-label">Position:</label>
+                            <div class="col-sm-5">
+                              <h3>{{dutyResume.emppossition| number}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Nationality:</label>
+                                <div class="col-sm-5">
+                                  <h3>{{dutyResume.empcode| number}}</h3>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="arfname" class="col-sm-5 col-form-label">Status:</label>
+                            <div class="col-sm-5">
+                              <h3>{{dutyResume.status| number}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="dateofbirth" class="col-sm-5 col-form-label">Leave From:</label>
+                            <div class="col-sm-6">
+                                <div class="col-sm-5">
+                                  <h3>{{dutyResume.leavefrom| number}}</h3>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="dateofbirth" class="col-sm-5 col-form-label">Resume Date:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="dateofbirth" type="date" name="dateofbirth"
+                                placeholder="dd-mm-yyyy" class="form-control" [(ngModel)]="dutyResume.resumeDate"/>
+                              <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="dateofbirth" class="col-sm-5 col-form-label">Submitted Date:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="subdate" type="date" name="subdate"
+                                placeholder="dd-mm-yyyy" class="form-control" [(ngModel)]="dutyResume.submitteddate"/>
+                              <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Submitted Date
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="mobileNumber" class="col-sm-5 col-form-label">Extended Days:</label>
+                            <div class="col-sm-5">
+                              <h3>{{dutyResume.leavefrom| number}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="dateofbirth" class="col-sm-5 col-form-label">Leave To:</label>
+                            <div class="col-sm-5">
+                              <h3>{{dutyResume.leaveto| date}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h3> 
+                            I have Returned from my vacation leave and I wish to resume my duties with effect from <input formControlName="days" type="text"
+                              class="tinput" [(ngModel)]="dutyResume.resumeDate"> I therefore kindly request you to approve my resumption of duties
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label>
+                            <input formControlName="dremarks" type="text" name="remarks" placeholder="Enter"
+                              class="form-control col-sm-9" [(ngModel)]="dutyResume.drremarks" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix"><button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <!-- <button [routerLink]="['/EmployeeSearch']" type="button" class="btn btn-info">Back</button> -->
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-salaryInfo" role="tabpanel"
+            aria-labelledby="custom-tabs-salaryInfo-control">
+            <div class="overlay-wrapper">
+              <app-head-of-department></app-head-of-department>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="custom-tabs-entitle" role="tabpanel"
+            aria-labelledby="custom-tabs-entitle-control">
+            <div class="overlay-wrapper">
+              <app-personnel-department></app-personnel-department>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-offDocs" role="tabpanel"
+            aria-labelledby="custom-tabs-offDocs-control">
+            <div class="overlay-wrapper">
+              <app-accounts-dept></app-accounts-dept>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="custom-tabs-contactInfo" role="tabpanel"
+            aria-labelledby="custom-tabs-contactInfo-tab">
+            <div class="overlay-wrapper">
+              <app-management-approval></app-management-approval>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

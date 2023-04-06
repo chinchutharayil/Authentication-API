@@ -1,0 +1,232 @@
+<div>
+  <div class="col-13">
+    <form>
+      <div class="card card-info">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">From:</label>
+                <div class="col-sm-4">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Choose a month</mat-label>
+                    <input matInput [(ngModel)]="FromMonthAndYear" name="From" [matDatepicker]="picker" monthYearLabel
+                      (dateChange)="FromEmitDateChange($event)" />
+                    <mat-hint>MM-YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker [startView]="'year'" (monthSelected)="FromMonthChanged($event, picker)">
+                    </mat-datepicker>
+                  </mat-form-field>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">To:</label>
+                <div class="col-sm-4">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Choose a month</mat-label>
+                    <input matInput [(ngModel)]="ToMonthAndYear" name="To" [matDatepicker]="picker1" monthYearLabel
+                      (dateChange)="ToEmitDateChange($event)" />
+                    <mat-hint>MM-YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker1">
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1 [startView]="'year'" (monthSelected)="ToMonthChanged($event, picker1)">
+                    </mat-datepicker>
+                  </mat-form-field>
+
+                </div>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-info" (click)="search()">Search</button>
+              &nbsp;
+              <button type="button" class="btn btn-info">Print To PDF</button>
+              &nbsp;
+              <button type="button" class="btn btn-info"
+                (click)="exporter.exportTable('xlsx',{fileName:'Employee Appraisal History'})">Export To Excel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-13">
+    <div class="card">
+      <div class="card-header">
+        <h3> Appraisal history details </h3>
+      </div>
+      <div class="card-header"> 
+        <div class="row">
+          <div class="col-3"> 
+          </div>
+        <div class="col-5">
+          <h3>OLD</h3>
+        </div>
+        <div class="col-4">
+          <h3>NEW</h3>
+        </div></div>
+      </div>
+      <div class="card-body table-responsive p-0">
+        <div class="content" role="main">  
+            <section class="container-style mat-elevation-z8" tabindex="0">
+            <table mat-table matTableExporter [dataSource]="dataSource"
+              class="table-bordened table-striped table-head-fixed" #exporter="matTableExporter">
+
+              <ng-container matColumnDef="effectiveDate">
+                <th mat-header-cell *matHeaderCellDef>Effective Date</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-center"> {{appInfo.effectiveDate |date:'dd-MM-yyy'}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldBasic">
+                <th mat-header-cell *matHeaderCellDef>Basic</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldBasic}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldHRA">
+                <th mat-header-cell *matHeaderCellDef>HRA</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldHRA}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldTransport">
+                <th mat-header-cell *matHeaderCellDef>Trans</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right"> {{appInfo.oldTransport}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldFuel">
+                <th mat-header-cell *matHeaderCellDef>Fuel</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldFuel}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldSRN">
+                <th mat-header-cell *matHeaderCellDef>SRN</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldSRN}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldBranch">
+                <th mat-header-cell *matHeaderCellDef>Branch</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldBranch}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldSkills">
+                <th mat-header-cell *matHeaderCellDef>Skills</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldSkills}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldTelephone">
+                <th mat-header-cell *matHeaderCellDef>Tele</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldTelephone}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldTicket">
+                <th mat-header-cell *matHeaderCellDef>Ticket</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldTicket}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldMerits">
+                <th mat-header-cell *matHeaderCellDef>Merits</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldMerits}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldOthers">
+                <th mat-header-cell *matHeaderCellDef>Others</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.oldOthers}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="oldTotal">
+                <th mat-header-cell *matHeaderCellDef class="center-line">Total</th>
+                <td mat-cell *matCellDef="let appInfo" class="center-line text-right">{{appInfo.oldTotal}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="newBasic">
+                <th mat-header-cell *matHeaderCellDef>Basic</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newBasic}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newHRA">
+                <th mat-header-cell *matHeaderCellDef>HRA</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newHRA}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newTransport">
+                <th mat-header-cell *matHeaderCellDef>Trans</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right"> {{appInfo.newTransport}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="newFuel">
+                <th mat-header-cell *matHeaderCellDef>Fuel</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newFuel}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newSRN">
+                <th mat-header-cell *matHeaderCellDef>SRN</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newSRN}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newBranch">
+                <th mat-header-cell *matHeaderCellDef>Branch</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newBranch}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newSkills">
+                <th mat-header-cell *matHeaderCellDef>Skills</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newSkills}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newTelephone">
+                <th mat-header-cell *matHeaderCellDef>Tele</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newTelephone}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newTicket">
+                <th mat-header-cell *matHeaderCellDef>Ticket</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newTicket}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newMerits">
+                <th mat-header-cell *matHeaderCellDef>Merits</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newMerits}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="newOthers">
+                <th mat-header-cell *matHeaderCellDef>Others</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.newOthers}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="revisedTotal">
+                <th mat-header-cell *matHeaderCellDef>Total</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.revisedTotal}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="remarks">
+                <th mat-header-cell *matHeaderCellDef>Remarks</th>
+                <td mat-cell *matCellDef="let appInfo" class="text-right">{{appInfo.remarks}}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="disclaimer">
+                <td mat-footer-cell *matFooterCellDef colspan="22">
+                  <B>OT Pay</B> - OverTime Pay,  <B>Trans</B>- Transport, <B>Tele</B>- Telephone, <B>SRN</B>- Seniority, <B>HRA</B> - Human Resource Allowance
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              <tr mat-footer-row *matFooterRowDef="['disclaimer']" class="description-footer-row"></tr>
+
+            </table>
+          </section> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

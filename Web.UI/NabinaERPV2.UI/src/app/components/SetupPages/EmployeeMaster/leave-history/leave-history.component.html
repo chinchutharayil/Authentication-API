@@ -1,0 +1,124 @@
+<div>
+    <div class="col-11">
+      <form>
+        <div class="card card-info">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">From:</label>
+                  <div class="col-sm-4">
+  
+                    <mat-form-field appearance="fill">
+                      <mat-label>Choose a month</mat-label>
+                      <input matInput [(ngModel)]="FromMonthAndYear" name="From" [matDatepicker]="picker" monthYearLabel
+                        (dateChange)="FromEmitDateChange($event)" />
+                      <mat-hint>MM-YYYY</mat-hint>
+                      <mat-datepicker-toggle matSuffix [for]="picker">
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker [startView]="'year'" (monthSelected)="FromMonthChanged($event, picker)">
+                      </mat-datepicker>
+                    </mat-form-field>
+   
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">To:</label>
+                  <div class="col-sm-4">
+  
+                    <mat-form-field appearance="fill">
+                      <mat-label>Choose a month</mat-label>
+                      <input matInput [(ngModel)]="ToMonthAndYear" name="To" [matDatepicker]="picker1" monthYearLabel
+                        (dateChange)="ToEmitDateChange($event)" />
+                      <mat-hint>MM-YYYY</mat-hint>
+                      <mat-datepicker-toggle matSuffix [for]="picker1">
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker1 [startView]="'year'" (monthSelected)="ToMonthChanged($event, picker1)">
+                      </mat-datepicker>
+                    </mat-form-field>
+                    
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-info" (click)="search()">Search</button>
+                &nbsp;
+                <button type="button" class="btn btn-info">Print To PDF</button>
+                &nbsp;
+                <button type="button" class="btn btn-info" (click)="exporter.exportTable('xlsx',{fileName:'Employee Leave History'})">Export To Excel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="col-11">
+      <div class="card">
+        <div class="card-header">
+          <h3> Leave history details </h3>
+        </div>
+        <div class="card-body table-responsive p-0">
+          <div class="content" role="main">
+            <div class="example-container mat-elevation-z8">
+  
+              <table mat-table matTableExporter [dataSource]="dataSource" class="table-bordened table-striped table-head-fixed" #exporter="matTableExporter"
+                style="width:100%; height: max-content;">
+  
+                <ng-container matColumnDef="fromDate">
+                  <th mat-header-cell *matHeaderCellDef>From Date</th>
+                  <td mat-cell *matCellDef="let levInfo"  class="text-center"> {{levInfo.fromDate |date:'dd-MM-yyy'}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="toDate">
+                  <th mat-header-cell *matHeaderCellDef>To Date</th>
+                  <td mat-cell *matCellDef="let levInfo"  class="text-center"> {{levInfo.toDate |date:'dd-MM-yyy'}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="daysleave">
+                  <th mat-header-cell *matHeaderCellDef>Leave Days</th>
+                  <td mat-cell *matCellDef="let levInfo" class="text-right">{{levInfo.daysleave}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="resumeDate">
+                    <th mat-header-cell *matHeaderCellDef>Duty Resume Date</th>
+                    <td mat-cell *matCellDef="let levInfo" class="text-center">{{levInfo.resumeDate |date:'dd-MM-yyy'}}</td>
+                  </ng-container>
+
+                <ng-container matColumnDef="overStay">
+                  <th mat-header-cell *matHeaderCellDef>Over Stay</th>
+                  <td mat-cell *matCellDef="let levInfo" class="text-right">{{levInfo.overStay}}</td>
+                </ng-container> 
+
+                <ng-container matColumnDef="airfare">
+                  <th mat-header-cell *matHeaderCellDef>Air Fare</th>
+                  <td mat-cell *matCellDef="let levInfo" class="text-right">{{levInfo.airfare}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="destination">
+                  <th mat-header-cell *matHeaderCellDef>Destination</th>
+                  <td mat-cell *matCellDef="let levInfo" class="text-center">{{levInfo.destination}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="purpose">
+                  <th mat-header-cell *matHeaderCellDef>Purpose</th>
+                  <td mat-cell *matCellDef="let levInfo" class="text-center"> {{levInfo.purpose}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="approvedDate">
+                  <th mat-header-cell *matHeaderCellDef class="column-last">Approved Date</th>
+                  <td mat-cell *matCellDef="let levInfo" class="column-last text-center " >{{levInfo.approvedDate |date:'dd-MM-yyy'}}</td>
+                </ng-container>
+   
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,44 @@
+   
+   .list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+  
+  } 
+  .mat-header-cell {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    min-height: 20px;
+  }
+  
+  .card-title {
+    margin-bottom: 0.05rem;
+    height: 20px;
+  }
+
+  .mat-header-row{
+    height: 40px;
+  }
+  .mat-row{
+    height: 40px;
+  }
+  label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500;
+}
+  .card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 0 solid rgba(0, 0, 0, 0.125);
+    position: sticky;
+  } 
+  th.mat-column-position,
+  td.mat-column-position {
+    padding-left: 2px;
+  }
+  .matColumnDef {
+    flex: 0 0 600px;
+  }
+  

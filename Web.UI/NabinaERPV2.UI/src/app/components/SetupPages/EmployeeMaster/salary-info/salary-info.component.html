@@ -1,0 +1,244 @@
+<div>
+  <form [formGroup]="empsalaryForm" (ngSubmit)="SaveEmpSalaryInfo()">
+    <div *ngIf="erroralert" class="alert alert-danger alert-dismissible fade show" role="alert">
+      Please check the fields and update properly
+      <button (click)="closeErrorAlert()" type="button" style="float:right ;" data-dismiss="alert"
+        class="close" aria-label="Close">X</button>
+    </div>
+    <div *ngIf="updatealert" class="alert alert-success alert-dismissible fade show" role="alert">
+      Employee Updated Successfully
+      <button (click)="closeUpdateAlert()" type="button" style="float:right ;" data-dismiss="alert"
+        class="close" aria-label="Close">X</button>
+    </div>
+    <div class="col-12">
+      <div class="card card-info">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="basicsal" class="col-sm-5 col-form-label">Basic:<sup style="color:crimson">*</sup>
+                </label>
+                <div class="col-sm-6">
+                  <input formControlName="basicsal" name="basicsal" [(ngModel)]="empSalMaster.basicSalary" type="text"
+                    class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('basicsal', 'required')">
+                    * Please enter Basic Salary
+                  </div>
+                  <div class="error-block" *ngIf="submitted && handleError('basicsal', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="hra" class="col-sm-4 col-form-label">HRA:</label>
+                <div class="col-sm-6">
+                  <input formControlName="hra" name="hra" [(ngModel)]="empSalMaster.hra" type="text"
+                    class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('hra', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="trallowance" class="col-sm-4 col-form-label">Transport Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="trallowance" name="trallowance" [(ngModel)]="empSalMaster.TransportAllowance"
+                    type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('trallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="seniorityallowance" class="col-sm-5 col-form-label">Seniority Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="seniorityallowance" name="seniorityallowance"
+                    [(ngModel)]="empSalMaster.SeniorityAllowance" type="text" class="form-control"
+                    placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('seniorityallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="branchallowance" class="col-sm-4 col-form-label">Branch Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="branchallowance" name="branchallowance"
+                    [(ngModel)]="empSalMaster.BranchAllowance" type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('branchallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="fuelallowance" class="col-sm-4 col-form-label">Fuel Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="fuelallowance" name="fuelallowance" [(ngModel)]="empSalMaster.FuelAllowance"
+                    type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('fuelallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="ticketallowance" class="col-sm-5 col-form-label">Ticket Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="ticketallowance" name="ticketallowance"
+                    [(ngModel)]="empSalMaster.TicketAllowance" type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('ticketallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="meritallowance" class="col-sm-4 col-form-label">Merit Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="meritallowance" name="meritallowance"
+                    [(ngModel)]="empSalMaster.MeritAllowance" type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('meritallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="telephoneallowance" class="col-sm-4 col-form-label">Telephone Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="telephoneallowance" name="telephoneallowance"
+                    [(ngModel)]="empSalMaster.TelephoneAllowance" type="text" class="form-control"
+                    placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('telephoneallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="skillallowance" class="col-sm-5 col-form-label">Skill Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="skillallowance" name="skillallowance"
+                    [(ngModel)]="empSalMaster.SkillAllowance" type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('skillallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="otherallowance" class="col-sm-4 col-form-label">Other Allowance:</label>
+                <div class="col-sm-6">
+                  <input formControlName="otherallowance" name="otherallowance"
+                    [(ngModel)]="empSalMaster.OtherAllowance" type="text" class="form-control" placeholder="Enter ...">
+                  <div class="error-block" *ngIf="submitted && handleError('otherallowance', 'pattern')">
+                    * Please enter positive numbers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-4 col-form-label">Total Salary:</label>
+                <div class="col-sm-6">
+                  <!-- <input  [(ngModel)]="this.totalSal" type="text" class="form-control" disabled> -->
+                  <label style="padding-top:10px;">{{this.totalSal}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-5 col-form-label">Accomodation:
+                </label>
+                <div class="col-sm-6"> 
+                  <select name="accomodation" #accomodation formControlName="accomodation"
+                    (change)="onSelectedAccomodation()" class="form-control">
+                    <option value="">-----Select-----</option>
+                    <option *ngFor="let accomodation of AccomodationList"
+                      [selected]="accomodation.id === empSalMaster.AccomodationId" [value]="accomodation.id">
+                      {{accomodation.address}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group row">
+                <label for="" class="col-sm-4 col-form-label">Unit: </label>
+                <div class="col-sm-6">
+                  <select name="unit" #unit [ngClass]="{'is-invalid' : submitted && f['unit'].errors}"
+                    formControlName="unit" (change)="onSelectedUnit()" class="form-control">
+                    <option value="">-----Select-----</option>
+                    <option *ngFor="let unit of UnitList" [selected]="unit.id === empSalMaster.unitId"
+                      [value]="unit.id">
+                      {{unit.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group clearfix">
+                <div class="icheck-primary d-inline">
+                  <input type="checkbox" formControlName="cbstraightshift" class="form-check-input"
+                    [(ngModel)]="empSalMaster.straightshiftcb" id="cbstraightshift" name="cbstraightshift">
+                  <label for="cbstraightshift">Straight
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group clearfix">
+                <div class="icheck-primary d-inline">
+                  <input type="checkbox" formControlName="cbovertime" [(ngModel)]="empSalMaster.overtimecb"
+                    id="cbovertime" name="cbovertime">
+                  <label for="cbovertime">Overtime
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group clearfix">
+                <div class="icheck-primary d-inline">
+                  <input type="checkbox" formControlName="cbairfare" [(ngModel)]="empSalMaster.airfarecb" id="cbairfare"
+                    name="cbairfare">
+                  <label for="cbairfare">Eligible for Airfare
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer clearfix">
+          <button type="submit" class="btn btn-info">Save</button>
+          &nbsp;
+          <button [routerLink]="['/EmployeeSearch']" type="button" class="btn btn-info">Back</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

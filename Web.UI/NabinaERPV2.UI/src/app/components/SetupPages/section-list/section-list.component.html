@@ -1,0 +1,88 @@
+<div class="col-12">
+  <div class="card card-info">
+    <div class="card-header">
+      <h2 class="card-title">Section</h2>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Section</label>
+              <div class="col-sm-6">
+              <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter ...">
+            </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label for="sortOrder" class="col-sm-2 col-form-label">Sort Order</label>
+              <div class="col-sm-6">
+              <input type="text" class="form-control" id="sortorder" [(ngModel)]="sorder" name="sortorder" placeholder="Enter ...">
+            </div>
+            </div>
+          </div>
+        </div>
+        <div>  
+          <button type="submit" class="btn btn-info" (click)="searchTitle()">Search</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+</div>
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <!-- <h3 class="card-title">Search List</h3> -->
+      <button [routerLink]="['/section']" id="addbtn" type="button"
+        class="btn btn-success btn rounded float-right"><i class="fas fa-plus"></i> Add New</button>
+    </div>
+    <div class="card-body table-responsive p-0" style="height: 600px;">
+      <div class="card-body p-0">
+        <div class="content" role="main">
+          <div class="mat-elevation-z8">
+
+            <table mat-table [dataSource]="dataSource" class="table-bordened table-striped" style="width:100%;" matSort>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let section"><a [routerLink]="['/section',section.id]" id="editbtn"><i class="fas fa-edit"></i></a></td>
+              </ng-container>
+              
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Sl No.&nbsp;&nbsp; </th>
+                <td mat-cell *matCellDef="let section; let i=index"> {{(paginator.pageIndex * paginator.pageSize) + (i + 1)}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let section"> {{section.name}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="isActive">
+                <th mat-header-cell *matHeaderCellDef> Is Active &nbsp;&nbsp;</th>
+                <td mat-cell *matCellDef="let section">
+                  <mat-checkbox [disabled]="true" type="checkbox" color="primary" [(ngModel)]="section.isActive">
+                  </mat-checkbox>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="sortOrder">
+                <th mat-header-cell *matHeaderCellDef> Sort Order &nbsp;&nbsp;</th>
+                <td mat-cell *matCellDef="let section"> {{section.sortOrder}} </td>
+              </ng-container>
+ 
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #paginator [pageSize]="13" [pageSizeOptions]="[5, 12, 25]" showFirstLastButtons aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

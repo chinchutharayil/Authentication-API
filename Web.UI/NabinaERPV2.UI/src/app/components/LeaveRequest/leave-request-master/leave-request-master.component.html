@@ -1,0 +1,751 @@
+<app-employee-header></app-employee-header>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-primary card-tabs">
+      <div class="card-header p-0 pt-1">
+        <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="custom-tabs-master-tab" data-toggle="pill" href="#custom-tabs-master"
+              role="tab" aria-controls="custom-tabs-master-control" aria-selected="false">Vacation Request</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-hod-tab" data-toggle="pill" href="#custom-tabs-hod" role="tab"
+              aria-controls="custom-tabs-hod-control" aria-selected="false">Head Of Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-personal-tab" data-toggle="pill" href="#custom-tabs-personal" role="tab"
+              aria-controls="custom-tabs-personal-control" aria-selected="false">Personnel Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-accounts-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-accounts-control" role="tab" href="#custom-tabs-accounts">Accounts
+              Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-management-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-management-control" role="tab" href="#custom-tabs-management">Management
+              Approval</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-ticketing-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-ticketing-control" role="tab" href="#custom-tabs-ticketing">Ticketing
+              Approval</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-log-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-log-control" role="tab" href="#custom-tabs-log">Log </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-leavehist-tab" data-toggle="pill" aria-selected="false"
+              aria-controls="custom-tabs-leavehist-control" role="tab" href="#custom-tabs-leavehist">Leave History</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content" id="custom-tabs-tabContent">
+          <div class="tab-pane fade show active" id="custom-tabs-master" role="tabpanel"
+            aria-labelledby="custom-tabs-master-control">
+            <div class="overlay-wrapper">
+              <form [formGroup]="leaveRequestForm" (ngSubmit)="SaveLeaveRequest()">
+                <div class="modal fade" id="modal-success">
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-success">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Success Modal</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Successfully Saved &hellip;</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="title"></div>
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Application Status:</label>
+                            <div class="col-sm-4">
+                              <h3>{{leaveRequest.status}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Application Date: </label>
+                            <div class="col-sm-6">
+                              <h3>{{leaveRequest.status |date:'dd-mm-yyyy'}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Entitled Leave: </label>
+                            <div class="col-sm-6">
+                              <h3></h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Employee Status:</label>
+                            <div class="col-sm-4">
+                              <h3>{{leaveRequest.empStatus}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Employee No:</label>
+                            <div class="col-sm-5">
+                              <h3>{{leaveRequest.status| number}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="empName" class="col-sm-3 col-form-label">Employee Name:<sup
+                                style="color:crimson">*</sup></label>
+                            <div class="col-sm-9">
+                              <!-- <div class="form-inline"> -->
+                              <div class="input-group">
+                                <input  class="form-control" type="search" placeholder="Search"
+                                  aria-label="Search">
+                                <!-- <div class="input-group-append"> -->
+                                <button (click)="openDialog()" class="btn btn-sidebar">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                                <!-- </div> -->
+                              </div>
+                              <!-- </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-1"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Department:</label>
+                            <div class="col-sm-8">
+                              <h3>{{leaveRequest.status}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Designation:</label>
+                            <div class="col-sm-8">
+                              <h3>{{leaveRequest.status}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Nationality:</label>
+                            <div class="col-sm-8">
+                              <h3>{{leaveRequest.status}}</h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="from" class="col-sm-3 col-form-label">From:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="from" type="date" name="from" placeholder="dd-mm-yyyy"  [(ngModel)]="leaveRequest.startDate"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="to" class="col-sm-3 col-form-label">To:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="to" type="date" name="to" placeholder="dd-mm-yyyy" [(ngModel)]="leaveRequest.endDate"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="noOfDays" class="col-sm-4 col-form-label">No Of Days:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="days" type="text" name="noOfDays" placeholder="Enter ..." [(ngModel)]="leaveRequest.requestedDays"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="leavetype" class="col-sm-3 col-form-label">Leave Type:</label>
+                            <div class="col-sm-6">
+                              <select name="" #type (change)="onSelectedType()" class="form-control">
+                                <option value="">-----Select-----</option>
+                                <option value="0">Short</option>
+                                <option value="1">Emergency</option>
+                                <option value="2">Annual</option>
+                                <option value="3">Official</option>
+                              </select>
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="destination" class="col-sm-3 col-form-label">Destination:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="destination" name="destination" type="text" class="form-control" [(ngModel)]="leaveRequest.destination"
+                                placeholder="Enter ...">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="destairport" class="col-sm-4 col-form-label">Destination Airport:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="destairport" type="text" name="destairport" placeholder="Enter..." [(ngModel)]="leaveRequest.destinationAirport"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="purpose" class="col-sm-3 col-form-label">Purpose:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="purpose" type="text" name="purpose" placeholder="Enter...." [(ngModel)]="leaveRequest.purpose"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="traveldate" class="col-sm-3 col-form-label">Travel Date:<sup
+                                style="color:rgb(230, 12, 55)">*</sup></label>
+                            <div class="col-sm-6"> 
+                              <input formControlName="traveldate" type="date" name="traveldate" placeholder="dd-mm-yyyy" [(ngModel)]="leaveRequest.travelDate"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="returndate" class="col-sm-4 col-form-label">Return Date:<sup
+                                style="color:crimson">*</sup></label>
+                            <div class="col-sm-6">
+                              <input formControlName="returndate" type="date" name="returndate" placeholder="dd-mm-yyyy" [(ngModel)]="leaveRequest.returnDate"
+                                class="form-control" />
+                              <!-- <div class="error-block" *ngIf="submitted && handleError('dateofbirth', 'required')">
+                                Please enter Date of Birth
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Ticket Booked By:</label>
+                            <input   type="radio" name="ticketby" placeholder="Enter ..." />
+                            <label for="dateofbirth" class="col-sm-3 col-form-label">Employee</label>
+                            <input   type="radio" name="ticketby" placeholder="Enter ..." />
+                            <label for="dateofbirth" class="col-sm-3 col-form-label">Company</label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Ticket :</label>
+                            <input  type="radio" name="ticket" placeholder="Enter ..." />
+                            <label for="" class="col-sm-3 col-form-label">Two Way</label>
+                            <input type="radio" name="ticket" placeholder="Enter ..." />
+                            <label for="" class="col-sm-3 col-form-label">One Way</label>
+                          </div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label> 
+                            <input formControlName="empremarks" type="text" name="empremarks" placeholder="Enter" [(ngModel)]="leaveRequest.empRemarks"
+                              class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> 
+          <div class="tab-pane fade" id="custom-tabs-hod" role="tabpanel" aria-labelledby="custom-tabs-hod-control">
+            <div class="overlay-wrapper">
+              <form [formGroup]="leaveHodForm" (ngSubmit)="SaveHOD()">
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h3> This Leave request could be recommended for <input formControlName="days" type="text"    [(ngModel)]="leaveRequestHod.approvedDays" 
+                              class="tinput"> days
+                            considering the work
+                            requirements and necessary acting arrangement to cover his/her work during leave can be made
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label>
+                             <input formControlName="hremarks" type="text" name="remarks" placeholder="Enter"
+                            [(ngModel)]="leaveRequestHod.hrRemarks"  class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> 
+            <div class="tab-pane fade" id="custom-tabs-personal" role="tabpanel"
+            aria-labelledby="custom-tabs-personal-control">
+            <div class="overlay-wrapper"> 
+              <form [formGroup]="leavePerForm" (ngSubmit)="SavePersonal()">
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h3> This Information is certified as correct and leave may be granted as per recommendation
+                            by
+                            the Head of Department. Visa renewal needs to be obtained prior to the leave approval
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="" class="col-3 col-form-label">ID Number:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="idno" class="form-control"  type="text">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">RP Validity Until:</label>
+                            <div class="col-sm-5">
+                              <input formControlName="rpval" class="form-control" type="text">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label> 
+                            <input formControlName="prremarks" type="text" name="remarks" placeholder="Enter"  [(ngModel)]="leaveRequestPer.prRemarks" 
+                              class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>  
+          <div class="tab-pane fade" id="custom-tabs-accounts" role="tabpanel"
+            aria-labelledby="custom-tabs-accounts-control">
+            <div class="overlay-wrapper">  
+              <form [formGroup]="leaveAccForm" (ngSubmit)="SaveAccounts()">
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Date of Rejoin:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="dateofrejoin" class="form-control" type="date">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Leave Entitled:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="leventitle" class="form-control" type="date">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Leave Applied Date:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="levappdate" class="form-control" type="date">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Final Approved Day's:</label>
+                            <div class="col-sm-5">
+                              <input formControlName="finalappdays" class="form-control" type="text">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Ticket Status:</label>
+                            <div class="col-sm-4">
+                              <h4>{{leaveRequest.status}}</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Last Ticket Given:</label>
+                            <div class="col-sm-5">
+                              <h4>{{leaveRequest.status}}</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Eliglible Destination:</label>
+                            <div class="col-sm-7">
+                              <input formControlName="destination" class="form-control" type="text"
+                                placeholder="Enter...">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label> 
+                            <input formControlName="accremarks" type="text" name="remarks" placeholder="Enter"
+                              class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>  
+           <div class="tab-pane fade" id="custom-tabs-management" role="tabpanel"
+            aria-labelledby="custom-tabs-management-tab">
+            <div class="overlay-wrapper"> 
+              <form [formGroup]="leaveMngmntForm" (ngSubmit)="SaveManagement()">
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h3> According to the company records you are entitled to an earned leave of <input
+                              formControlName="earnleave" type="text" class="tinput"> days only for the services
+                            rendered by you up to <input type="text" class="tinput">
+                            you are granted the same and additional <input type="text" class="tinput"> days leave
+                            (without
+                            pay) totaling <input type="number" class="tinput"> days. If you overstay beyond this
+                            approved
+                            leave for
+                            whatever reason, you will not be considered for any salary increase or benefits for two
+                            years.
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Approved Days:</label>
+                            <div class="col-sm-4">
+                              <input class="form-control" type="text">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label> 
+                            <input formControlName="mremarks" type="text" name="remarks" placeholder="Enter"
+                              class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> 
+           <div class="tab-pane fade" id="custom-tabs-ticketing" role="tabpanel"
+            aria-labelledby="custom-tabs-ticketing-tab">
+            <div class="overlay-wrapper"> 
+              <form [formGroup]="leaveTicketForm" (ngSubmit)="SaveTicket()">
+                <div class="modal fade" id="modal-success">
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-success">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Success Modal</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Successfully Saved &hellip;</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="title"></div>
+                <div class="col-12">
+                  <div class="card card-info">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="traveldate" class="col-sm-4 col-form-label">Date and Time of Travel:</label>
+                            <div class="col-sm-6">
+                              <input formControlName="traveldate" type="datetime" name="" placeholder="dd-mm-yyyy"
+                                class="form-control datetimepicker-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="toairline" class="col-sm-4 col-form-label">Name of Airline:</label>
+                            <div class="col-sm-8">
+                              <input formControlName="toairline" type="text" name="toairline" placeholder="Enter"
+                                class="form-control" /> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <input type="radio" name="normal" placeholder="Enter ..." />
+                            <label for="" class="col-sm-4 col-form-label">Normal</label>
+                            <input  type="radio" name="optional" placeholder="Enter ..." />
+                            <label for="" class="col-sm-4 col-form-label">Optional</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="tnormalfare" class="col-sm-4 col-form-label">Normal Fare:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="tnormalfare" type="text" name="normalfare" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="tappfare" class="col-sm-4 col-form-label">Fare as per Applicant's
+                              option:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="tappfare" type="text" name="" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="tfarediff" class="col-sm-4 col-form-label">Fare difference:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="tfarediff" type="text" name="tfarediff" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="returndate" class="col-sm-4 col-form-label">Date and Time of Return:</label>
+                            <div class="col-sm-6"> 
+                              <input formControlName="returndate" type="text" name="returndate" placeholder="dd-mm-yyyy"
+                                class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="rairline" class="col-sm-4 col-form-label">Name of Airline:</label>
+                            <div class="col-sm-8">
+                              <input formControlName="rairline" type="text" name="rairline" placeholder="dd-mm-yyyy"
+                                class="form-control" /> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <input type="radio" name="rfare" placeholder="Enter ..." />
+                            <label for="" class="col-sm-3 col-form-label">Normal</label>
+                            <input type="radio" name="rfare" placeholder="Enter ..." />
+                            <label for="" class="col-sm-3 col-form-label">Optional</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="rnormalfare" class="col-sm-4 col-form-label">Normal Fare:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="rnormalfare" type="text" name="rnormalfare"
+                                class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="rappfare" class="col-sm-4 col-form-label">Fare as per Applicant's
+                              option:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="rappfare" type="text" name="rappfare" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group row">
+                            <label for="rfarediff" class="col-sm-4 col-form-label">Fare difference:</label>
+                            <div class="col-sm-4">
+                              <input formControlName="rfarediff" type="text" name="rfarediff" class="form-control" />
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group row">
+                            <label class="col-sm-1 col-form-label"> Remarks:</label> 
+                            <input formControlName="tremarks" type="text" name="remarks" placeholder="Enter"
+                              class="form-control col-sm-10" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                      <button type="submit" class="btn btn-info">Save</button>
+                      &nbsp;
+                      <button type="submit" class="btn btn-info">Cancel</button>
+                      &nbsp;
+                      <button [routerLink]="['/LeaveRequestSearch']" type="button" class="btn btn-info">Back</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div> 
+          
+          <div class="tab-pane fade" id="custom-tabs-log" role="tabpanel"
+          aria-labelledby="custom-tabs-log-tab">
+          <div class="overlay-wrapper"> 
+            <form >
+              <div class="col-12">
+                <div class="card card-info">
+                  <div class="card-body"> 
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="custom-tabs-leavehist" role="tabpanel"
+        aria-labelledby="custom-tabs-leavehist-tab">
+        <div class="overlay-wrapper">
+         <!-- <app-leave-history></app-leave-history> -->
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

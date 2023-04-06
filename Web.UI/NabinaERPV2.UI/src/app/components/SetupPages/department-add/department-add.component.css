@@ -1,0 +1,8 @@
+.card-title {
+    margin-bottom: 0.05rem;
+    height: 20px;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500;
+}

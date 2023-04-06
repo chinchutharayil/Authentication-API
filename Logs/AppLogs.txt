@@ -1,0 +1,320 @@
+2022-10-24 18:03:01.382 +03:00 [INF] Configuring web host (Identity.API)...
+2022-10-24 18:03:01.601 +03:00 [INF] Starting web host (Identity.API)...
+2022-10-24 18:03:01.673 +03:00 [INF] Initializing UI Database
+2022-10-24 18:03:02.450 +03:00 [INF] Saving healthchecks configuration to database
+2022-10-24 18:03:02.716 +03:00 [DBG] Executing HealthCheck collector HostedService.
+2022-10-24 18:03:03.835 +03:00 [DBG] HealthReportCollector - health report execution history saved.
+2022-10-24 18:03:03.840 +03:00 [DBG] Creating a new HealthReport history.
+2022-10-24 18:03:03.904 +03:00 [DBG] HealthReportCollector has completed.
+2022-10-24 18:03:03.906 +03:00 [DBG] HealthCheck collector HostedService executed successfully.
+2022-10-24 18:03:13.918 +03:00 [DBG] Executing HealthCheck collector HostedService.
+2022-10-24 18:03:13.956 +03:00 [DBG] HealthReportCollector - health report execution history saved.
+2022-10-24 18:03:13.957 +03:00 [DBG] HealthReport history already exists and is in the same state, updating the values.
+2022-10-24 18:03:13.962 +03:00 [DBG] HealthReportCollector has completed.
+2022-10-24 18:03:13.962 +03:00 [DBG] HealthCheck collector HostedService executed successfully.
+2022-10-24 18:03:23.966 +03:00 [DBG] Executing HealthCheck collector HostedService.
+2022-10-24 18:03:24.011 +03:00 [DBG] HealthReportCollector - health report execution history saved.
+2022-10-24 18:03:24.012 +03:00 [DBG] HealthReport history already exists and is in the same state, updating the values.
+2022-10-24 18:03:24.012 +03:00 [DBG] HealthReportCollector has completed.
+2022-10-24 18:03:24.012 +03:00 [DBG] HealthCheck collector HostedService executed successfully.
+2022-10-24 18:03:34.030 +03:00 [DBG] Executing HealthCheck collector HostedService.
+2022-10-24 18:03:34.042 +03:00 [DBG] HealthReportCollector - health report execution history saved.
+2022-10-24 18:03:34.043 +03:00 [DBG] HealthReport history already exists and is in the same state, updating the values.
+2022-10-24 18:03:34.044 +03:00 [DBG] HealthReportCollector has completed.
+2022-10-24 18:03:34.044 +03:00 [DBG] HealthCheck collector HostedService executed successfully.
+2022-10-24 18:03:44.057 +03:00 [DBG] Executing HealthCheck collector HostedService.
+2022-10-24 18:03:44.069 +03:00 [DBG] HealthReportCollector - health report execution history saved.
+2022-10-24 18:03:44.070 +03:00 [DBG] HealthReport history already exists and is in the same state, updating the values.
+2022-10-24 18:03:44.070 +03:00 [DBG] HealthReportCollector has completed.
+2022-10-24 18:03:44.070 +03:00 [DBG] HealthCheck collector HostedService executed successfully.
+[18:07:17 Information] 
+Configuring web host (Identity.API)...
+
+[18:07:17 Information] 
+Starting web host (Identity.API)...
+
+[18:07:17 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Initializing UI Database
+
+[18:07:18 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Saving healthchecks configuration to database
+
+[18:07:18 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:07:19 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:07:19 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+Creating a new HealthReport history.
+
+[18:07:19 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:07:19 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:07:29 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:07:30 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:07:30 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:07:30 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:07:30 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:07:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:07:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:07:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:07:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:07:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:07:50 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:07:50 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:07:50 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:07:50 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:07:50 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:08:00 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:08:00 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:08:00 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:08:00 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:08:00 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:08:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:08:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:08:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:08:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:08:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:13:09 Information] 
+Configuring web host (Identity.API)...
+
+[18:13:09 Information] 
+Starting web host (Identity.API)...
+
+[18:13:09 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Initializing UI Database
+
+[18:13:10 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Saving healthchecks configuration to database
+
+[18:13:10 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:13:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:13:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+Creating a new HealthReport history.
+
+[18:13:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:13:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:13:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:13:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:13:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:13:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:13:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:13:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:13:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:13:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:13:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:13:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:13:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:13:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:13:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:13:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:13:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:13:51 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:13:51 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:13:51 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:13:51 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:13:51 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:14:01 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:14:01 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:14:01 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:14:01 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:14:01 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:14:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:14:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:14:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:14:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:14:11 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:14:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:14:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:14:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:14:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:14:21 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:14:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:14:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:14:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:14:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:14:31 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[18:14:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[18:14:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[18:14:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReport history already exists and is in the same state, updating the values.
+
+[18:14:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[18:14:41 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+
+[12:31:38 Information] 
+Configuring web host (Identity.API)...
+
+[12:31:39 Information] 
+Starting web host (Identity.API)...
+
+[12:31:39 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Initializing UI Database
+
+[12:31:40 Information] HealthChecks.UI.Core.HostedService.UIInitializationHostedService
+Saving healthchecks configuration to database
+
+[12:31:40 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+Executing HealthCheck collector HostedService.
+
+[12:31:42 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector - health report execution history saved.
+
+[12:31:42 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+Creating a new HealthReport history.
+
+[12:31:42 Debug] HealthChecks.UI.Core.HostedService.HealthCheckReportCollector
+HealthReportCollector has completed.
+
+[12:31:42 Debug] HealthChecks.UI.Core.HostedService.HealthCheckCollectorHostedService
+HealthCheck collector HostedService executed successfully.
+

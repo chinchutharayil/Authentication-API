@@ -1,0 +1,93 @@
+[2022-11-02 09:00:06.345 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:00:06.627 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:00:06.899 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:00:07.696 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:00:08.102 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:00:09.376 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:00:09.379 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:00:09.430 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:00:09.431 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:01:02.081 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:01:02.318 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:01:02.415 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:01:03.113 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:01:03.351 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:01:04.449 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:01:04.452 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:01:04.504 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:01:04.505 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:02:38.075 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:07:56.712 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:07:57.147 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:07:57.398 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:07:58.204 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:07:58.662 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:08:00.137 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:08:00.141 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:08:00.200 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:08:00.201 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:08:13.390 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:12:14.732 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:12:14.957 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:12:15.070 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:12:15.844 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:12:16.104 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:12:17.229 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:12:17.233 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:12:17.291 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:12:17.292 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:12:27.446 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:14:30.890 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:14:31.067 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:14:31.138 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:14:31.834 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:14:32.069 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:14:33.117 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:14:33.120 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:14:33.174 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:14:33.175 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:14:43.251 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:15:31.176 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:15:31.359 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:15:31.427 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:15:32.115 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:15:32.357 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:15:33.408 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:15:33.411 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:15:33.464 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:15:33.464 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:18:49.688 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:18:49.935 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:18:50.012 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:18:50.721 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:18:50.960 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:18:52.035 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:18:52.040 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:18:52.093 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:18:52.094 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:21:38.111 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:21:38.306 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:21:38.407 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:21:39.178 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:21:39.421 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:21:40.478 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:21:40.481 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:21:40.535 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:21:40.536 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:21:50.544 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:21:50.603 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:21:50.603 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-11-02 09:22:34.932 +03:00  INF]  Configuring web host (Identity.API)...
+[2022-11-02 09:22:35.135 +03:00  INF]  Starting web host (Identity.API)...
+[2022-11-02 09:22:35.258 +03:00  INF]  Initializing UI Database
+[2022-11-02 09:22:36.000 +03:00  INF]  Saving healthchecks configuration to database
+[2022-11-02 09:22:36.235 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:22:37.308 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:22:37.311 +03:00  DBG]  Creating a new HealthReport history.
+[2022-11-02 09:22:37.363 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:22:37.364 +03:00  DBG]  HealthCheck collector HostedService executed successfully.
+[2022-11-02 09:24:18.683 +03:00  DBG]  Executing HealthCheck collector HostedService.
+[2022-11-02 09:24:18.759 +03:00  DBG]  HealthReportCollector - health report execution history saved.
+[2022-11-02 09:24:18.760 +03:00  DBG]  HealthReport history already exists and is in the same state, updating the values.
+[2022-11-02 09:24:18.764 +03:00  DBG]  HealthReportCollector has completed.
+[2022-11-02 09:24:18.765 +03:00  DBG]  HealthCheck collector HostedService executed successfully.

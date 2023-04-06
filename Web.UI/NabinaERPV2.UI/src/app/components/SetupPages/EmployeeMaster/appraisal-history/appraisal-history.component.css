@@ -1,0 +1,164 @@
+.container-style {
+  height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  min-height: 25px;
+  text-align: center;
+  border-right: 0.5px solid rgb(177, 177, 177);
+}
+
+.mat-column-effectiveDate {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 7% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-oldBasic,
+.mat-column-oldHRA,
+.mat-column-oldTransport,
+.mat-column-oldFuel,
+.mat-column-oldSRN,
+.mat-column-oldBranch,
+.mat-column-oldSkills,
+.mat-column-oldTelephone,
+.mat-column-oldTicket,
+.mat-column-oldMerits,
+.mat-column-oldOthers,
+.mat-column-oldTotal,
+.mat-column-newBasic,
+.mat-column-newHRA,
+.mat-column-newTransport,
+.mat-column-newFuel,
+.mat-column-newSRN,
+.mat-column-newBranch,
+.mat-column-newSkills,
+.mat-column-newTelephone,
+.mat-column-newTicket,
+.mat-column-newMerits,
+.mat-column-newOthers,
+.mat-column-revisedTotal  {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 30px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-remarks  {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 100px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-h3, h3{
+  font: 500 14px/28px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px; 
+}
+
+.card-title {
+  margin-bottom: 0.05rem;
+  height: 20px;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+  font-weight: 500;
+}
+
+.mat-header-row {
+  height: 40px;
+}
+
+.mat-row {
+  height: 40px;
+}
+
+/* .mat-cell{
+    align:right;
+    align-items: flex-end;
+    justify-content: flex-end;
+ }  */
+.card-header {
+  margin-bottom: 0;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 0 solid rgba(0, 0, 0, 0.125); 
+  padding: 0rem 1.25rem;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+  padding-left: 2px;
+}
+
+.text-right {
+  justify-content: right;
+  padding-right: 4px;
+  border-right: 0.5px solid rgb(177, 177, 177);
+}
+
+.center-line {
+  justify-content: right;
+  padding-right: 4px;
+  border-right: 3px solid rgb(148, 148, 148);
+}
+
+.text-center {
+  justify-content: center;
+  border-right: 0.5px solid rgb(177, 177, 177);
+}
+ 
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+  padding-right: 10px;
+  border-right: 0px;
+}
+
+/* .mat-cell {
+  border-right: 0.5px solid rgb(177, 177, 177);
+} */
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type {
+  padding-left: 0px;
+}
+.description-footer-row{ 
+  height: 30px; 
+  font-family:Arial, Helvetica, sans-serif;
+  padding-left: 24px;
+}

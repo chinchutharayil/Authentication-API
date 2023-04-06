@@ -1,0 +1,83 @@
+<div>
+    <form [formGroup]="empEntitleForm" (ngSubmit)="SaveEmpEntitleDetails()">
+        <div class="col-12">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="gratuityeffectivedate" class="col-sm-4 col-form-label">Gratuity Effective
+                                    Date:</label>
+                                <div class="col-sm-6">
+                                    <input type="date" formControlName="gratuityeffectivedate"
+                                        name="gratuityeffectivedate"
+                                        [(ngModel)]="empEntitleMaster.gratuityeffectiveDate" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="gratuityadvance" class="col-sm-4 col-form-label">Gratuity
+                                    Advance:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="gratuityadvance" name="gratuityadvance"
+                                        [(ngModel)]="empEntitleMaster.gratuityAdvance" type="text" class="form-control"
+                                        placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="lopdays" class="col-sm-4 col-form-label">Leave w/o Pay
+                                    days:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="lopdays" name="lopdays"
+                                        [(ngModel)]="empEntitleMaster.lopDays" type="text" class="form-control"
+                                        placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="airticket" class="col-sm-4 col-form-label">Air Ticket
+                                    Fare:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="airticket" name="airticket"
+                                        [(ngModel)]="empEntitleMaster.airticketFare" type="text" class="form-control"
+                                        placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="dateofpassage" class="col-sm-4 col-form-label">Date of
+                                    Passage:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="dateofpassage" type="date" name="dateofpassage"
+                                        [(ngModel)]="empEntitleMaster.dateOfPassage" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="dutyresumedate" class="col-sm-4 col-form-label">Last Duty
+                                    Resume Date:</label>
+                                <div class="col-sm-6">
+                                    <input type="date" formControlName="dutyresumedate" name="dutyresumedate"
+                                        [(ngModel)]="empEntitleMaster.dateofRejoin" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer clearfix">
+                    <button type="submit" class="btn btn-info">Save</button>
+                    &nbsp;
+                    <button [routerLink]="['/EmployeeSearch']" type="button" class="btn btn-info">Back</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

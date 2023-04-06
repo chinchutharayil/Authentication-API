@@ -1,0 +1,59 @@
+<div class="card-body">
+    <div class="tab-content" id="custom-tabs-tabContent">
+        <div class="tab-pane fade show active" id="custom-tabs-master" role="tabpanel"
+            aria-labelledby="custom-tabs-master-control">
+            <div class="overlay-wrapper">
+                <!-- <form [formGroup]="empmasterForm" (ngSubmit)="SaveEmpInfoDetails()"></form> -->
+                <form>
+                    <div class="modal fade" id="modal-success">
+                        <div class="modal-dialog">
+                            <div class="modal-content bg-success">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Success Modal</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Successfully Saved &hellip;</p>
+                                </div>
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title"></div>
+                    <div class="col-12">
+                        <div class="card card-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group row">
+                                            <label for="code">Resuming of duties is hereby approved. In case of excess
+                                                leave taken action will have to be taken as per the company policy at
+                                                the time of annual appraisal.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                      <div class="form-group row">
+                                        <label class="col-sm-1 col-form-label"> Remarks:</label>
+                                        <input formControlName="accremarks" type="text" name="remarks" placeholder="Enter"
+                                          class="form-control col-sm-10" />
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="card-footer clearfix"><button type="submit" class="btn btn-info">Save</button>
+                                &nbsp;
+                                <!-- <button [routerLink]="['/EmployeeSearch']" type="button" class="btn btn-info">Back</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

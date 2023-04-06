@@ -1,0 +1,82 @@
+<div class="col-13">
+    <div class="card card-info">
+        <div class="card-header">
+            <!-- <h2 class="card-title">Add Department</h2> -->
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form [formGroup]="deptForm" (ngSubmit)="saveDepartment()">
+                <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    Department added Successfully
+                    <button (click)="closeAlert()" type="button" style="float:right ;" data-dismiss="alert"
+                        class="close" aria-label="Close">X</button>
+                </div>
+                <div *ngIf="alertError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Department already exist
+                    <button (click)="closeErrorAlert()" type="button" style="float:right ;" data-dismiss="alert"
+                        class="close" aria-label="Close">X</button>
+                </div>
+                <div *ngIf="updatealert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    Department Updated Successfully
+                    <button (click)="closeUpdateAlert()" type="button" style="float:right ;" data-dismiss="alert"
+                        class="close" aria-label="Close">X</button>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label for="name">Department <sup style="color:crimson">*</sup> </label>
+                            <input formControlName="name" [(ngModel)]="department.name" type="text" class="form-control"
+                                id="name" [ngClass]="{'is-invalid' : submitted && f['name'].errors}" name="name"
+                                placeholder="Enter ...">
+                            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                <div *ngIf="f['name'].errors['required']">Please enter Department Name</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label for="sortOrder">Sort Order</label>
+                            <input formControlName="sortOrder" type="text" class="form-control" id="sortOrder"
+                                [(ngModel)]="department.sortOrder"
+                                [ngClass]="{'is-invalid' : submitted && f['sortOrder'].errors}" name="sortorder"
+                                placeholder="Enter ...">
+                            <div *ngIf="submitted && f['sortOrder'].errors" class="invalid-feedback">
+                                <div *ngIf="f['sortOrder'].errors['required']">Please enter sort order</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label for="shortName">Short Name</label>
+                            <input formControlName="shortName" type="text" class="form-control" id="shortName"
+                                [(ngModel)]="department.shortName"
+                                [ngClass]="{'is-invalid' : submitted && f['shortName'].errors}" name="shortName"
+                                placeholder="Enter ...">
+                            <div *ngIf="submitted && f['shortName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['shortName'].errors['required']">Please enter Short Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <!-- checkbox -->
+                    <div class="form-group">
+                        <input formControlName="isActive" class="form-check-input" type="checkbox" id="isActive" [(ngModel)]="department.isActive"
+                            name="isactive">
+                        <label for="isActive">IsActive</label>
+                    </div>
+                </div>
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" class="btn btn-info">Save</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-info"
+                        [routerLink]="['/departmentsearch']">Back</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>

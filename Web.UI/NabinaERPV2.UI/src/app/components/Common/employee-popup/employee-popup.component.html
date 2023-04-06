@@ -1,0 +1,124 @@
+<div mat-dialog-title>
+    <div class="form-group row">
+        <h2 class="col">Employee Search</h2> 
+        <button class="col-sm-1" mat-button mat-dialog-close>x</button>
+        <button class="col-sm-1" mat-button (click)="closePopup()" mat-dialog-close>Close</button>
+    </div>
+</div>
+<div mat-dialog-content>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="form-group row">
+                    <label for="" class="col-form-label">Employee Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="empName" name="empName"
+                            placeholder="Enter ...">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group row">
+                    <label for="" class="col-form-label">Employee No</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="empNo" [(ngModel)]="empNo" name="empNo"
+                            placeholder="Enter ...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group row">
+                    <label for="department" class="col-form-label">Department</label>
+                    <div class="col-sm-8">
+                        <select name="" #dept (change)="onSelectedDepartment()" id="syncPolicy" class="form-control">
+                            <option default value="0">-----Select-----</option>
+                            <option *ngFor="let dep of DepartmentList" [value]="dep.id">{{dep.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group row">
+                    <label for="" class="col-form-label">Designation</label>
+                    <div class="col-sm-8">
+                        <select name="" #desg (change)="onSelectedDesignation()" class="form-control">
+                            <option default value="0">-----Select-----</option>
+                            <option *ngFor="let Desig of DesignationList" [value]="Desig.id">{{Desig.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group row">
+                    <label for="" class="col-form-label">Nationality</label>
+                    <div class="col-sm-8">
+                        <select name="" #natlist (change)="onSelectedNational()" class="form-control">
+                            <option default value="0">-----Select-----</option>
+                            <option *ngFor="let Natlist of NationalityList" [value]="Natlist.id">
+                                {{Natlist.nationality1}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            &nbsp;&nbsp;&nbsp; <button type="submit" class="btn btn-info" (click)="search()">Search</button>
+            &nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-body table-responsive p-0" style="height: 350px;">
+            <div class="content" role="main">
+                <div class="example-container mat-elevation-z8">
+
+                    <table mat-table [dataSource]="dataSource"
+                        class="table-bordened table-striped table-head-fixed text-nowrap " style="width:100%;">
+
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let employee"><a (click)="closePopup()" id="editbtn"><i
+                                        class="fas fa-edit"></i></a></td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="empNo">
+                            <th mat-header-cell *matHeaderCellDef>Employee No</th>
+                            <td mat-cell *matCellDef="let employee"> {{employee.empNo}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="empName">
+                            <th mat-header-cell *matHeaderCellDef>Employee Name</th>
+                            <td mat-cell *matCellDef="let employee">{{employee.empName}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="empDepartment">
+                            <th mat-header-cell *matHeaderCellDef>Department </th>
+                            <td mat-cell *matCellDef="let employee">{{employee.empDepartment}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="empDesignation">
+                            <th mat-header-cell *matHeaderCellDef>Designation </th>
+                            <td mat-cell *matCellDef="let employee">{{employee.empDesignation}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="empNationality">
+                            <th mat-header-cell *matHeaderCellDef>Nationality</th>
+                            <td mat-cell *matCellDef="let employee">{{employee.empNationality}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator #paginator [pageSize]="12" [pageSizeOptions]="[5, 12, 25]" showFirstLastButtons
+                        aria-label="Select page of periodic elements">
+                    </mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

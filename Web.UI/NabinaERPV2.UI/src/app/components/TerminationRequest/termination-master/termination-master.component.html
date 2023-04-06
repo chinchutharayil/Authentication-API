@@ -1,0 +1,260 @@
+<app-employee-header></app-employee-header>
+
+<div>
+    <form [formGroup]="terminationDetails">
+        <div class="col-12">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="empName" class="col-sm-3 col-form-label">Employee Name:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input class="form-control" type="search" placeholder="Search"
+                                            aria-label="Search">
+                                        <!-- <div class="input-group-append"> -->
+                                        <button (click)="openDialog()" class="btn btn-sidebar">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="hra" class="col-sm-2 col-form-label">Emplmoyee No:</label>
+                                <div class="col-sm-4">
+                                    <input formControlName="empno" name="hra" type="text" class="form-control"
+                                        placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Designation:</label>
+                                <div class="col-sm-7">
+                                    <h3>{{terminationRequest.status}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Nationality:</label>
+                                <div class="col-sm-6">
+                                    <h3>{{terminationRequest.status}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Employee Status:</label>
+                                <div class="col-sm-4">
+                                    <h3>{{terminationRequest.status}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-7 col-form-label">Termination Request Status:</label>
+                                <div class="col-sm-4">
+                                    <h3>{{terminationRequest.status}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="" class="col-form-label">Type:</label>
+                                <div class="col-sm-5">
+                                    <select name="" #status (change)="onChangeType()" class="form-control">
+                                        <option value="">-----Select-----</option>
+                                        <option value="0">Active</option>
+                                        <option value="1">On Leave</option>
+                                        <option value="2">Resign</option>
+                                        <option value="3">Terminated</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Filed Date:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="fileddate" name="fileddate" type="date"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Effective Date:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="effectivedate" name="effectivedate" type="date"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-1 col-form-label">Remarks :</label>
+                                <div class="col-sm-10">
+                                    <input formControlName="remarks" name="remarks" type="text"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Ticket Fare:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="ticketfare" name="ticketfare" type="text"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Departure Date:</label>
+                                <div class="col-sm-4">
+                                    <input formControlName="departuredate" name="departuredate" type="date"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbstraightshift"
+                                                class="form-check-input" id="cbstraightshift" name="cbstraightshift">
+                                            <label for="cbstraightshift">Visa
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbovertime" id="cbovertime"
+                                                name="cbovertime">
+                                            <label for="cbovertime">Accomodation
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbairfare" id="cbairfare"
+                                                name="cbairfare">
+                                            <label for="cbairfare">Others
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Airline Fare:</label>
+                                <div class="col-sm-6">
+                                    <input formControlName="airlinefare" name="airlinefare" type="text"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-4 col-form-label">Settlement Date:</label>
+                                <div class="col-sm-4">
+                                    <input formControlName="departuredate" name="departuredate" type="date"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbstraightshift"
+                                                class="form-check-input" id="cbstraightshift" name="cbstraightshift">
+                                            <label for="cbstraightshift">Vehicle
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbovertime" id="cbovertime"
+                                                name="cbovertime">
+                                            <label for="cbovertime">Ticket
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbairfare" id="cbairfare"
+                                                name="cbairfare">
+                                            <label for="cbairfare">Traffic
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Remarks :</label>
+                                <div class="col-sm-9">
+                                    <input formControlName="remarks" name="remarks" type="text"
+                                        class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" formControlName="cbstraightshift"
+                                                class="form-check-input" id="cbstraightshift" name="cbstraightshift">
+                                            <label for="cbstraightshift">Is Settlement Through Payroll
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card-footer clearfix">
+                <button type="submit" class="btn btn-info">Save</button>
+                &nbsp;
+                <button [routerLink]="['/EmployeeSearch']" type="button" class="btn btn-info">Back</button>
+            </div>
+        </div>
+    </form>
+</div>
